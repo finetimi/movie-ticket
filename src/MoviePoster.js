@@ -1,3 +1,4 @@
+// @flow
 import React, { Component, PropTypes } from 'react';
 import {
 	View,
@@ -5,6 +6,7 @@ import {
 	Image,
 	StyleSheet,
 	TouchableOpacity,
+	Text,
 } from 'react-native';
 import { defaultStyles } from './styles';
 
@@ -24,14 +26,14 @@ export default class MoviePoster extends Component {
 			<TouchableOpacity 
 				style={styles.container}
 				onPress={()=>onOpen(movie)}>
-				<View style={style.imageContainer}>
+				<View style={styles.imageContainer}>
 					<Image source ={{uri: movie.poster}} 
 						   style={styles.image} />
 				</View>
-				<Text styles={style.title} numberOfLines={1}>
+				<Text style={styles.title} numberOfLines={1}>
 					 {movie.title} 
 				</Text>
-				<Text styles={style.genre} numberOfLines={1}>
+				<Text style={styles.genre} numberOfLines={1}>
 					 {movie.genre} 
 				</Text>
 			</TouchableOpacity>
