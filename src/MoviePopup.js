@@ -13,6 +13,7 @@ import {
 	LayoutAnimation
 } from 'react-native';
 import { defaultStyles } from './styles';
+import Options from './Options';
 
 const { width, height } = Dimensions.get('window');
 const defaultHeight = height * 0.67;
@@ -182,6 +183,7 @@ export default class MoviePopup extends Component{
 			onChooseTime,
 			onBook
 		} = this.props;
+
 		if (!this.state.visible){
 			return null
 		}
@@ -214,12 +216,18 @@ export default class MoviePopup extends Component{
 								<View>
 									  {/* Day */}
 						              <Text style={styles.sectionHeader}>Day</Text>
-						              {/* TODO: Add day options here */}
-						              <Text>Add day options here</Text>
+						              	<Options
+										  values={movie.days}
+										  chosen={chosenDay}
+										  onChoose={onChooseDay}
+										/>
 						              {/* Time */}
 						              <Text style={styles.sectionHeader}>Showtime</Text>
-						              {/* TODO: Add show time options here */}
-						              <Text>Add show time options here</Text>
+						              <Options
+										  values={movie.times}
+										  chosen={chosenDay}
+										  onChoose={onChooseDay}
+										/>
 								</View>
 							</View>
 

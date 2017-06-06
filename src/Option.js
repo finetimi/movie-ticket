@@ -27,7 +27,7 @@ export default class Options extends Component{
 		}
 	}
 
-	componentWillReceiveProps(nexProps){
+	componentWillReceiveProps(nextProps:Object){
 		if (!this.props.isChosen && nextProps.isChosen){
 			this.animateSelect();
 		}
